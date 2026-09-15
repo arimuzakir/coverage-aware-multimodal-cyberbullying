@@ -1,0 +1,17 @@
+{
+  "comparison": "qmf2023_adapted_seed42_minus_full_lr",
+  "subset": "non_augmented",
+  "n": 13307,
+  "groups": 3585,
+  "macro_f1_difference": -0.0030627756723160537,
+  "grouped_bootstrap_95_ci": [
+    -0.00594330856017645,
+    -0.0001586657667007796
+  ],
+  "grouped_sign_permutation_two_sided_p": 0.04447776111944028,
+  "bootstrap_repetitions": 2000,
+  "permutation_repetitions": 2000,
+  "qmf_right_full_wrong": 140,
+  "qmf_wrong_full_right": 179,
+  "disagreements": 319
+}

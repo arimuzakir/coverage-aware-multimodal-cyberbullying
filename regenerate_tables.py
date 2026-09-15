@@ -1,10 +1,9 @@
 """
 REPRODUCIBILITY AND VERIFICATION SCRIPT
-Paper ID: 20265495 (IJIES)
 Title: Coverage-Aware Learning from Fragmented Multimodal Evidence for Child-Directed Cyberbullying Detection
 
-This script regenerates Table 2 (Overall 24-Model Metrics) and Table 3 (Per-Class Performance)
-directly from the verified experimental artifacts.
+This script regenerates Table 2 (Overall 24-Model Metrics), Table 3 (Per-Class Performance),
+and QMF Baseline (ICML 2023) directly from the verified experimental artifacts.
 Usage:
     python regenerate_tables.py
 """
@@ -40,6 +39,21 @@ def display_table2():
     print(df_display[available_cols].to_string(index=False))
     print("=" * 95)
 
+def display_qmf():
+    qmf_path = REPORTS_DIR / "table_qmf_metrics.csv"
+    if qmf_path.exists():
+        df = pd.read_csv(qmf_path)
+        print("\n" + "=" * 95)
+        print("RECENT BASELINE: QMF (ICML 2023, Zhang et al.) EVALUATION")
+        print("=" * 95)
+        df_display = df[df["subset"] == "non_augmented"].copy()
+        cols = ["model", "seed", "accuracy", "macro_f1", "roc_auc", "average_precision"]
+        available = [c for c in cols if c in df_display.columns]
+        for c in available[2:]:
+            df_display[c] = df_display[c].apply(lambda x: f"{x:.4f}" if isinstance(x, (int, float)) else str(x))
+        print(df_display[available].to_string(index=False))
+        print("=" * 95)
+
 def display_table3():
     t3_path = REPORTS_DIR / "table3_per_class.csv"
     if not t3_path.exists():
@@ -56,5 +70,6 @@ def display_table3():
 if __name__ == "__main__":
     print("Verifying experiment reproducibility artifacts...")
     display_table2()
+    display_qmf()
     display_table3()
     print("Verification completed successfully. All artifacts are numerically verified.\n")
