@@ -1,14 +1,12 @@
 # Coverage-Aware Learning from Fragmented Multimodal Evidence for Child-Directed Cyberbullying Detection
 
-**International Journal of Intelligent Engineering and Systems (IJIES)**  
-**Paper ID:** 20265495  
-**Authors:** Ari Muzakir, Fajar Romadhan, et al.  
+**Implementation and Reproducibility Artifacts**
 
 ---
 
 ## Overview
 
-This repository provides the official implementation, replication scripts, and reproducibility artifacts for our study on detecting child-directed cyberbullying from fragmented multimodal evidence. 
+This repository provides the official implementation, replication scripts, and reproducibility artifacts for the research on detecting child-directed cyberbullying from fragmented multimodal evidence.
 
 All evaluations are conducted on an audited benchmark corpus of 13,307 social media entries across YouTube, Twitter/X, Instagram, and Facebook under a 5-fold stratified cross-validation scheme with nested calibration splits to eliminate data leakage.
 
@@ -20,18 +18,18 @@ The table below summarizes performance across representative model families on i
 
 | Model Architecture | Modality Category | Accuracy | Macro F1 | ROC-AUC | Average Precision |
 | :--- | :--- | :---: | :---: | :---: | :---: |
-| indobert | Unimodal Text | 0.8907 | 0.8808 | 0.9528 | 0.9131 |
-| indobertweet | Unimodal Text (Slang) | 0.8666 | 0.8543 | 0.9351 | 0.8830 |
-| mbert | Multilingual Text | 0.8308 | 0.8132 | 0.9001 | 0.8321 |
-| 	ranscript | Unimodal Audio (Speech) | 0.8548 | 0.8406 | 0.9298 | 0.8769 |
-| isual | Unimodal Visual (Video) | 0.6625 | 0.4396 | 0.5177 | 0.3719 |
-| 	fidf_lr | Classical Baseline (n-gram) | 0.8158 | 0.7968 | 0.8873 | 0.8161 |
-| eature_concat_seed43 | Early Fusion Baseline | 0.8959 | 0.8860 | 0.9577 | 0.9213 |
-| healnet2024_seed43 | SOTA Baseline (NeurIPS 2024) | 0.8944 | 0.8846 | 0.9548 | 0.9184 |
-| **ull_mlp_seed44** | **Proposed Tri-Modal Late Fusion** | **0.8943** | **0.8842** | **0.9576** | **0.9213** |
+| `indobert` | Unimodal Text | 0.8907 | 0.8808 | 0.9528 | 0.9131 |
+| `indobertweet` | Unimodal Text (Slang) | 0.8666 | 0.8543 | 0.9351 | 0.8830 |
+| `mbert` | Multilingual Text | 0.8308 | 0.8132 | 0.9001 | 0.8321 |
+| `transcript` | Unimodal Audio (Speech) | 0.8548 | 0.8406 | 0.9298 | 0.8769 |
+| `visual` | Unimodal Visual (Video) | 0.6625 | 0.4396 | 0.5177 | 0.3719 |
+| `tfidf_lr` | Classical Baseline (n-gram) | 0.8158 | 0.7968 | 0.8873 | 0.8161 |
+| `feature_concat_seed43` | Early Fusion Baseline | 0.8959 | 0.8860 | 0.9577 | 0.9213 |
+| `healnet2024_seed43` | SOTA Baseline (NeurIPS 2024) | 0.8944 | 0.8846 | 0.9548 | 0.9184 |
+| **`full_mlp_seed44`** | **Proposed Tri-Modal Late Fusion** | **0.8943** | **0.8842** | **0.9576** | **0.9213** |
 
 Key observations:
-1. The proposed tri-modal late fusion model (ull_mlp_seed44) achieves peak performance on the multimodal framework (Macro-F1: 88.42%, Accuracy: 89.43%), outperforming all unimodal baselines.
+1. The proposed tri-modal late fusion model (`full_mlp_seed44`) achieves peak performance on the multimodal framework (Macro-F1: 88.42%, Accuracy: 89.43%), outperforming all unimodal baselines.
 2. The framework matches the performance of recent iterative cross-attention baselines (HEALNet, NeurIPS 2024) while offering significantly lower computational latency.
 3. Visual evidence alone exhibits low standalone signal on child cyberbullying text-driven discourse, but complements language features when combined via non-linear late fusion.
 
@@ -39,7 +37,7 @@ Key observations:
 
 ## Repository Structure
 
-`	ext
+```text
 coverage-aware-multimodal-cyberbullying/
 ├── notebooks/                     # Executed Jupyter notebooks with complete outputs
 │   ├── 00_persiapan_runtime.ipynb # Runtime configuration and split validation
@@ -71,7 +69,7 @@ coverage-aware-multimodal-cyberbullying/
 ├── requirements.txt               # Dependencies specification
 ├── LICENSE                        # MIT License
 └── README.md                      # Repository documentation
-`
+```
 
 ---
 
@@ -79,27 +77,23 @@ coverage-aware-multimodal-cyberbullying/
 
 To verify all reported metrics from the auditability artifacts without retraining:
 
-`ash
+```bash
 git clone https://github.com/arimuzakir/coverage-aware-multimodal-cyberbullying.git
 cd coverage-aware-multimodal-cyberbullying
 pip install -r requirements.txt
 python regenerate_tables.py
-`
+```
 
 ---
 
 ## Citation
 
-`ibtex
-@article{muzakir2026coverage,
+```bibtex
+@article{cyberbullying2026coverage,
   title={Coverage-Aware Learning from Fragmented Multimodal Evidence for Child-Directed Cyberbullying Detection},
-  author={Muzakir, Ari and Romadhan, Fajar and others},
-  journal={International Journal of Intelligent Engineering and Systems},
-  volume={19},
-  year={2026},
-  note={Paper ID: 20265495}
+  year={2026}
 }
-`
+```
 
 ---
 
