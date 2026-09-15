@@ -56,6 +56,7 @@ coverage-aware-multimodal-cyberbullying/
 │   ├── splits.json                         # Cross-validation index partitions
 │   ├── modality_masks.csv                  # Nominal and effective decodable coverage masks
 │   ├── coverage.json                       # Modality coverage breakdown
+│   ├── all_model_predictions.csv           # Out-of-fold probabilities, thresholds, and predictions (all 24 models + QMF)
 │   ├── base_probabilities_test.csv         # Out-of-fold probability predictions
 │   └── thresholds.json                     # Calibrated decision thresholds
 ├── reports_and_metrics/                    # Numerical evaluation tables
