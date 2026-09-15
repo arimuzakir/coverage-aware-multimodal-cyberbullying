@@ -1,0 +1,89 @@
+[
+  {
+    "subset": "non_augmented",
+    "n": 13307,
+    "groups": 3585,
+    "a": "full_lr",
+    "b": "tfidf_lr",
+    "delta_macro_f1_b_minus_a": -0.08433233585436195,
+    "delta_ci95": [
+      -0.09373195350398905,
+      -0.07546479818408
+    ],
+    "a_ci95": [
+      0.8740362650690766,
+      0.8878860238235179
+    ],
+    "b_ci95": [
+      0.7855266736427515,
+      0.8072284829986072
+    ],
+    "cluster_permutation_p": 0.0004997501249375312,
+    "mcnemar_exact_p_descriptive": 2.2372006380550283e-118,
+    "a_wrong_b_right": 478,
+    "a_right_b_wrong": 1478,
+    "net_correct_b_minus_a": -1000,
+    "total_disagreements": 1956,
+    "bootstrap_valid": 2000,
+    "caveat": "Conditional uncertainty of stored predictions; not full retraining uncertainty. McNemar assumes independent items; cluster permutation is primary.",
+    "cluster_permutation_p_holm": 0.0014992503748125937
+  },
+  {
+    "subset": "non_augmented",
+    "n": 13307,
+    "groups": 3585,
+    "a": "full_lr",
+    "b": "feature_concat_seed42",
+    "delta_macro_f1_b_minus_a": 0.0016580729313058207,
+    "delta_ci95": [
+      -0.002417200948683368,
+      0.005901766216055805
+    ],
+    "a_ci95": [
+      0.8740362650690766,
+      0.8878860238235179
+    ],
+    "b_ci95": [
+      0.8762011835086128,
+      0.8890012644270548
+    ],
+    "cluster_permutation_p": 0.44627686156921537,
+    "mcnemar_exact_p_descriptive": 0.38568389375879497,
+    "a_wrong_b_right": 304,
+    "a_right_b_wrong": 282,
+    "net_correct_b_minus_a": 22,
+    "total_disagreements": 586,
+    "bootstrap_valid": 2000,
+    "caveat": "Conditional uncertainty of stored predictions; not full retraining uncertainty. McNemar assumes independent items; cluster permutation is primary.",
+    "cluster_permutation_p_holm": 0.8925537231384307
+  },
+  {
+    "subset": "non_augmented",
+    "n": 13307,
+    "groups": 3585,
+    "a": "full_lr",
+    "b": "healnet2024_seed42",
+    "delta_macro_f1_b_minus_a": -0.0005972398584683791,
+    "delta_ci95": [
+      -0.005123883662308507,
+      0.0038540826569357974
+    ],
+    "a_ci95": [
+      0.8740362650690766,
+      0.8878860238235179
+    ],
+    "b_ci95": [
+      0.873934355269946,
+      0.8870047353553692
+    ],
+    "cluster_permutation_p": 0.8075962018990505,
+    "mcnemar_exact_p_descriptive": 1.0,
+    "a_wrong_b_right": 363,
+    "a_right_b_wrong": 362,
+    "net_correct_b_minus_a": 1,
+    "total_disagreements": 725,
+    "bootstrap_valid": 2000,
+    "caveat": "Conditional uncertainty of stored predictions; not full retraining uncertainty. McNemar assumes independent items; cluster permutation is primary.",
+    "cluster_permutation_p_holm": 0.8925537231384307
+  }
+]

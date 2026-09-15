@@ -1,0 +1,11 @@
+{
+  "n": 15044,
+  "transcript_real": 450,
+  "visual_real": 565,
+  "both_real": 0,
+  "neither_auxiliary_real": 14029,
+  "video_files_matched": 579,
+  "video_directory_files": 579,
+  "audio_status": "existing transcript CSV; ASR provenance/quality not independently verified",
+  "visual_status": "actual decoding in this run, not copied from paper"
+}
